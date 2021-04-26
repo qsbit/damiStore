@@ -78,6 +78,38 @@
 ### 我的订单
 
 对用户的所有订单进行展示。
+### 项目截图
+
+**首页：**
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/home.png "home.png")
+
+**全部商品**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/goods.png "goods.png")
+
+**购物车**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/shoppingCart.png "shoppingCart.gif")
+
+**我的收藏**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/collect.png "collect.png")
+
+**确认订单**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/confirmOrder.png "confirmOrder.png")
+
+**我的订单**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/order.png "order.png")
+
+**登录**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/login.png "login.png")
+
+**注册**
+
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/register.png "register.png")
 
 ## 运行项目
 
