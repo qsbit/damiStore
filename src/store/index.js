@@ -1,8 +1,8 @@
 /*
  * @Description: Vuex入口
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-02-07 16:23:00
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-02-25 22:51:50
  */
 import Vue from 'vue'

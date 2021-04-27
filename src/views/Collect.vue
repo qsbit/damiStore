@@ -1,8 +1,8 @@
 <!--
  * @Description: 我的收藏页面组件
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-02-20 17:22:56
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-03-12 19:34:00
  -->
 <template>
@@ -10,12 +10,12 @@
     <!-- Add a static page for my favorite module -->
     <div class="collect-header">
       <div class="collect-title">
-        <i class="el-icon-collection-tag" style="color: #ff6700;"></i>
+        <i class="el-icon-collection-tag" style="color: #ff6700"></i>
         我的收藏
       </div>
     </div>
     <div class="content">
-      <div class="goods-list" v-if="collectList.length>0">
+      <div class="goods-list" v-if="collectList.length > 0">
         <MyList :list="collectList" :isDelete="true"></MyList>
       </div>
       <!-- 收藏列表为空的时候显示的内容 -->
@@ -33,24 +33,24 @@
 export default {
   data() {
     return {
-      collectList: []
+      collectList: [],
     };
   },
   activated() {
     // 获取收藏数据
     this.$axios
       .post("/api/user/collect/getCollect", {
-        user_id: this.$store.getters.getUser.user_id
+        user_id: this.$store.getters.getUser.user_id,
       })
-      .then(res => {
+      .then((res) => {
         if (res.data.code === "001") {
           this.collectList = res.data.collectList;
         }
       })
-      .catch(err => {
+      .catch((err) => {
         return Promise.reject(err);
       });
-  }
+  },
 };
 </script>
 <style>

@@ -2,11 +2,11 @@
 
 ## 前言
 
-模仿 [小米商城 ](www.mi.com)做一个小项目。如有错误，请多多指教。
+模仿 [小米商城 ](https://www.mi.com)做一个小项目。如有错误，请多多指教。
 
 ## 说明
 
-> 本项目前后端分离，前端参考 [小米商城](www.mi.com) 实现，但与小米官方没有关系，纯属个人瞎搞，若需要购买小米产品请到小米官方商城。
+> 本项目前后端分离，前端参考 [小米商城](https://www.mi.com) 实现，但与小米官方没有关系，纯属个人瞎搞，若需要购买小米产品请到小米官方商城。
 
 > 这是本项目的前端，后端请移步到[damiStore-server](https://github.com/qsbit/damiStore-server) 。
 
@@ -78,38 +78,10 @@
 ### 我的订单
 
 对用户的所有订单进行展示。
-### 项目截图
 
-**首页：**
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/home.png "home.png")
+## 项目演示
 
-**全部商品**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/goods.png "goods.png")
-
-**购物车**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/shoppingCart.png "shoppingCart.gif")
-
-**我的收藏**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/collect.png "collect.png")
-
-**确认订单**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/confirmOrder.png "confirmOrder.png")
-
-**我的订单**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/order.png "order.png")
-
-**登录**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/login.png "login.png")
-
-**注册**
-
-![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/register.png "register.png")
+![image](https://github.com/qsbit/damiStore/blob/main/public/screenshots/home.png)
 
 ## 运行项目
 

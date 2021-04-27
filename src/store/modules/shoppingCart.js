@@ -1,8 +1,8 @@
 /*
  * @Description: 购物车状态模块
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-02-21 18:40:41
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-03-07 20:38:55
  */
 export default {
@@ -22,11 +22,11 @@ export default {
     } */
   },
   getters: {
-    getShoppingCart (state) {
+    getShoppingCart(state) {
       // 获取购物车状态
       return state.shoppingCart;
     },
-    getNum (state) {
+    getNum(state) {
       // 购物车商品总数量
       let totalNum = 0;
       for (let i = 0; i < state.shoppingCart.length; i++) {
@@ -35,7 +35,7 @@ export default {
       }
       return totalNum;
     },
-    getIsAllCheck (state) {
+    getIsAllCheck(state) {
       // 判断是否全选
       let isAllCheck = true;
       for (let i = 0; i < state.shoppingCart.length; i++) {
@@ -48,7 +48,7 @@ export default {
       }
       return isAllCheck;
     },
-    getCheckGoods (state) {
+    getCheckGoods(state) {
       // 获取勾选的商品信息
       // 用于确认订单页面
       let checkGoods = [];
@@ -60,7 +60,7 @@ export default {
       }
       return checkGoods;
     },
-    getCheckNum (state) {
+    getCheckNum(state) {
       // 获取购物车勾选的商品数量
       let totalNum = 0;
       for (let i = 0; i < state.shoppingCart.length; i++) {
@@ -71,7 +71,7 @@ export default {
       }
       return totalNum;
     },
-    getTotalPrice (state) {
+    getTotalPrice(state) {
       // 购物车勾选的商品总价格
       let totalPrice = 0;
       for (let i = 0; i < state.shoppingCart.length; i++) {
@@ -84,16 +84,16 @@ export default {
     }
   },
   mutations: {
-    setShoppingCart (state, data) {
+    setShoppingCart(state, data) {
       // 设置购物车状态
       state.shoppingCart = data;
     },
-    unshiftShoppingCart (state, data) {
+    unshiftShoppingCart(state, data) {
       // 添加购物车
       // 用于在商品详情页点击添加购物车,后台添加成功后，更新vuex状态
       state.shoppingCart.unshift(data);
     },
-    updateShoppingCart (state, payload) {
+    updateShoppingCart(state, payload) {
       // 更新购物车
       // 可更新商品数量和是否勾选
       // 用于购物车点击勾选及加减商品数量
@@ -109,7 +109,7 @@ export default {
       // 根据商品在购物车的数组的索引和属性更改
       state.shoppingCart[payload.key][payload.prop] = payload.val;
     },
-    addShoppingCartNum (state, productID) {
+    addShoppingCartNum(state, productID) {
       // 增加购物车商品数量
       // 用于在商品详情页点击添加购物车,后台返回002，“该商品已在购物车，数量 +1”，更新vuex的商品数量
       for (let i = 0; i < state.shoppingCart.length; i++) {
@@ -121,7 +121,7 @@ export default {
         }
       }
     },
-    deleteShoppingCart (state, id) {
+    deleteShoppingCart(state, id) {
       // 根据购物车id删除购物车商品
       for (let i = 0; i < state.shoppingCart.length; i++) {
         const temp = state.shoppingCart[i];
@@ -130,7 +130,7 @@ export default {
         }
       }
     },
-    checkAll (state, data) {
+    checkAll(state, data) {
       // 点击全选按钮，更改每个商品的勾选状态
       for (let i = 0; i < state.shoppingCart.length; i++) {
         state.shoppingCart[i].check = data;
@@ -138,22 +138,22 @@ export default {
     }
   },
   actions: {
-    setShoppingCart ({ commit }, data) {
+    setShoppingCart({ commit }, data) {
       commit('setShoppingCart', data);
     },
-    unshiftShoppingCart ({ commit }, data) {
+    unshiftShoppingCart({ commit }, data) {
       commit('unshiftShoppingCart', data);
     },
-    updateShoppingCart ({ commit }, payload) {
+    updateShoppingCart({ commit }, payload) {
       commit('updateShoppingCart', payload);
     },
-    addShoppingCartNum ({ commit }, productID) {
+    addShoppingCartNum({ commit }, productID) {
       commit('addShoppingCartNum', productID);
     },
-    deleteShoppingCart ({ commit }, id) {
+    deleteShoppingCart({ commit }, id) {
       commit('deleteShoppingCart', id);
     },
-    checkAll ({ commit }, data) {
+    checkAll({ commit }, data) {
       commit('checkAll', data);
     }
   }

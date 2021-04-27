@@ -1,8 +1,8 @@
 <!--
  * @Description: 用户注册组件
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-02-19 22:20:35
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-03-01 15:34:34
  -->
 <template>
@@ -39,7 +39,13 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button size="medium" type="primary" @click="Register" style="width:100%;">注册</el-button>
+          <el-button
+            size="medium"
+            type="primary"
+            @click="Register"
+            style="width: 100%"
+            >注册</el-button
+          >
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -61,9 +67,9 @@ export default {
         //判断数据库中是否已经存在该用户名
         this.$axios
           .post("/api/users/findUserName", {
-            userName: this.RegisterUser.name
+            userName: this.RegisterUser.name,
           })
-          .then(res => {
+          .then((res) => {
             // “001”代表用户名不存在，可以注册
             if (res.data.code == "001") {
               this.$refs.ruleForm.validateField("checkPass");
@@ -72,7 +78,7 @@ export default {
               return callback(new Error(res.data.msg));
             }
           })
-          .catch(err => {
+          .catch((err) => {
             return Promise.reject(err);
           });
       } else {
@@ -113,43 +119,43 @@ export default {
       RegisterUser: {
         name: "",
         pass: "",
-        confirmPass: ""
+        confirmPass: "",
       },
       // 用户信息校验规则,validator(校验方法),trigger(触发方式),blur为在组件 Input 失去焦点时触发
       rules: {
         name: [{ validator: validateName, trigger: "blur" }],
         pass: [{ validator: validatePass, trigger: "blur" }],
-        confirmPass: [{ validator: validateConfirmPass, trigger: "blur" }]
-      }
+        confirmPass: [{ validator: validateConfirmPass, trigger: "blur" }],
+      },
     };
   },
   watch: {
     // 监听父组件传过来的register变量，设置this.isRegister的值
-    register: function(val) {
+    register: function (val) {
       if (val) {
         this.isRegister = val;
       }
     },
     // 监听this.isRegister变量的值，更新父组件register变量的值
-    isRegister: function(val) {
+    isRegister: function (val) {
       if (!val) {
         this.$refs["ruleForm"].resetFields();
         this.$emit("fromChild", val);
       }
-    }
+    },
   },
   methods: {
     Register() {
       // 通过element自定义表单校验规则，校验用户输入的用户信息
-      this.$refs["ruleForm"].validate(valid => {
+      this.$refs["ruleForm"].validate((valid) => {
         //如果通过校验开始注册
         if (valid) {
           this.$axios
             .post("/api/users/register", {
               userName: this.RegisterUser.name,
-              password: this.RegisterUser.pass
+              password: this.RegisterUser.pass,
             })
-            .then(res => {
+            .then((res) => {
               // “001”代表注册成功，其他的均为失败
               if (res.data.code === "001") {
                 // 隐藏注册组件
@@ -161,15 +167,15 @@ export default {
                 this.notifyError(res.data.msg);
               }
             })
-            .catch(err => {
+            .catch((err) => {
               return Promise.reject(err);
             });
         } else {
           return false;
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

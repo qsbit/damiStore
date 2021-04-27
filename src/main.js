@@ -1,8 +1,8 @@
 /*
  * 入口文件
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-02-07 16:23:00
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-03-04 23:38:41
  */
 import Vue from 'vue'
@@ -80,7 +80,7 @@ router.beforeResolve((to, from, next) => {
 // 格式: 2020-02-25 21:43:23
 Vue.filter('dateFormat', (dataStr) => {
   var time = new Date(dataStr);
-  function timeAdd0 (str) {
+  function timeAdd0(str) {
     if (str < 10) {
       str = '0' + str;
     }

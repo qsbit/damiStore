@@ -1,8 +1,8 @@
 <!--
  * @Description: 渲染markdown文件
- * @Author: hai-27
+ * @Author: Jungle
  * @Date: 2020-03-12 17:30:46
- * @LastEditors: hai-27
+ * @LastEditors: Jungle
  * @LastEditTime: 2020-03-12 18:23:58
  -->
 <template>
@@ -15,24 +15,24 @@ import VueMarkdown from "vue-markdown";
 export default {
   name: "MyMarkdown",
   components: {
-    VueMarkdown
+    VueMarkdown,
   },
   data() {
     return {
-      md: ""
+      md: "",
     };
   },
   created() {
     // 从后端请求README.md
     this.$axios
       .get("/api/public/docs/README.md", {})
-      .then(res => {
+      .then((res) => {
         this.md = res.data;
       })
-      .catch(err => {
+      .catch((err) => {
         return Promise.reject(err);
       });
-  }
+  },
 };
 </script>
 <style>
